@@ -510,6 +510,78 @@
             .grid-2 { grid-template-columns: 1fr; }
             section { padding: 60px 5%; }
         }
+                /* ================= MARQUEE TECH STACK ================= */
+        .tech-marquee-container {
+            width: 100%;
+            max-width: 450px; /* Menyesuaikan lebar foto */
+            margin: 20px auto 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 58, 138, 0.2);
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+        }
+
+        .tech-marquee-container::before,
+        .tech-marquee-container::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 40px;
+            z-index: 2;
+        }
+
+        .tech-marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(255,255,255,1), transparent);
+        }
+
+        .tech-marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(255,255,255,1), transparent);
+        }
+
+        .tech-marquee {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollMarquee 15s linear infinite;
+        }
+
+        .tech-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .tech-marquee span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tech-marquee span i {
+            color: var(--accent);
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+                /* Pewarnaan Ikon Marquee */
+        .tech-marquee span:nth-child(1) i { color: #3b82f6; } /* Biru MikroTik */
+        .tech-marquee span:nth-child(2) i { color: #000000; } /* Hitam Linux */
+        .tech-marquee span:nth-child(3) i { color: #f97316; } /* Oranye Proxmox */
+        .tech-marquee span:nth-child(4) i { color: #2496ED; } /* Biru Docker */
+        .tech-marquee span:nth-child(7) i { color: #107C41; } /* Hijau Excel */
+        .tech-marquee span:nth-child(8) i { color: #2B579A; } /* Biru Word */
+        .tech-marquee span:nth-child(9) i { color: #4285F4; } /* Biru Google */
     </style>
 </head>
 <body>
@@ -527,10 +599,30 @@
         </ul>
     </nav>
 
-      <!-- HERO SECTION -->
-      <!-- HERO SECTION -->
+         <!-- HERO SECTION -->
     <section id="hero">
         <div class="hero-content reveal">
+            
+            <!-- TEKS BERJALAN (MARQUEE) DI ATAS SUBTITLE -->
+            <div class="tech-marquee-container" style="margin: 0 0 20px 0; max-width: 100%;">
+                                  <div class="tech-marquee">
+                    <span><i class="fas fa-network-wired"></i> IT Support</span>
+                    <span><i class="fas fa-headset"></i> Helpdesk & Ticketing</span>
+                    <span><i class="fas fa-tools"></i> Hardware Troubleshooting</span>
+                    <span><i class="fab fa-linux"></i> Linux & Docker</span>
+                    <span><i class="fas fa-user-cog"></i> User & Asset Management</span>
+                    <span><i class="fas fa-file-excel"></i> Data Administration</span>
+                    
+                    <!-- Duplikat -->
+                    <span><i class="fas fa-network-wired"></i> IT Support</span>
+                    <span><i class="fas fa-headset"></i> Helpdesk & Ticketing</span>
+                    <span><i class="fas fa-tools"></i> Hardware Troubleshooting</span>
+                    <span><i class="fab fa-linux"></i> Linux & Docker</span>
+                    <span><i class="fas fa-user-cog"></i> User & Asset Management</span>
+                    <span><i class="fas fa-file-excel"></i> Data Administration</span>
+                </div>
+            </div>
+
             <span class="hero-subtitle">IT SUPPORT | NETWORK ENGINEER | DATA ADMIN</span>
             <h1>Halo, Saya <br>Algi Alghifari</h1>
             <p>Lulusan D3 Teknik Komputer - Politeknik Sukabumi dengan <strong>Predikat Pujian (Excellent)</strong>. Siap memberikan solusi teknis infrastruktur jaringan dan pengolahan data administrasi secara profesional.</p>
@@ -544,7 +636,6 @@
                 </a>
                 
                 <!-- Tombol Lihat CV (Oranye Solid) -->
-                <!-- GANTI LINK DI BAWAH DENGAN LINK GOOGLE DRIVE CV KAMU -->
                 <a href="https://drive.google.com/file/d/1_OU1oi57bzajRWZ4JYGhTNnSCcn_oKkA/view?usp=sharing" target="_blank" class="btn" style="margin: 0; background-color: #d97706; color: white; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);">
                     <i class="fas fa-file-pdf"></i> Lihat CV
                 </a>
@@ -582,7 +673,7 @@
                 <h4 style="color: var(--text-dark);">Politeknik Sukabumi | 2022 - 2025</h4>
                 <p style="color: var(--text-muted); margin-top: 10px;">
                     <strong>Program Studi:</strong> D3 Teknik Komputer<br>
-                    <strong>IPK:</strong> 3.52 / 4.00 (Predikat Pujian / Excellent)<br>
+                    <strong>IPK:</strong> 3.51 / 4.00 (Predikat Pujian / Excellent)<br>
                     <strong>Fokus Karir:</strong> IT Support, Network Engineering, dan Administrasi Data.
                 </p>
             </div>
