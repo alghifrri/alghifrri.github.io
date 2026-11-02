@@ -161,7 +161,33 @@
             max-width: 600px;
         }
 
-    
+        /* FOTO PROFIL */
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--bg-white);
+            box-shadow: 0 0 30px var(--glow), 0 20px 40px rgba(0,0,0,0.1);
+            animation: floating 6s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            border-radius: 50%;
+            border: 2px dashed var(--accent);
+            animation: spin 20s linear infinite;
+            z-index: 1;
+        }
 
         @keyframes floating {
             0% { transform: translateY(0px); }
@@ -556,21 +582,6 @@
         .tech-marquee span:nth-child(7) i { color: #107C41; } /* Hijau Excel */
         .tech-marquee span:nth-child(8) i { color: #2B579A; } /* Biru Word */
         .tech-marquee span:nth-child(9) i { color: #4285F4; } /* Biru Google */
-                /* Perbaikan Foto Profil agar tidak terpotong */
-                /* Perbaikan Foto Profil agar tidak terpotong */
-        .hero-image img {
-            object-position: center 15%; /* Menggeser fokus gambar ke arah atas (kepala) */
-            transform: scale(1.02); /* Sedikit zoom in agar wajah lebih menonjol */
-            transition: all 0.4s ease;
-        }
-        
-        /* Memastikan efek melayang (floating) tetap berjalan */
-        @keyframes floating {
-            0% { transform: translateY(0px) scale(1.02); }
-            50% { transform: translateY(-15px) scale(1.02); }
-            100% { transform: translateY(0px) scale(1.02); }
-        }
-       
     </style>
 </head>
 <body>
@@ -625,16 +636,15 @@
                 </a>
                 
                 <!-- Tombol Lihat CV (Oranye Solid) -->
-                <a href="https://drive.google.com/file/d/1BqL2unNaKWzTXNz5jpzrj0I8e-mpfhty/view?usp=sharing" target="_blank" class="btn" style="margin: 0; background-color: #d97706; color: white; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);">
+                <a href="https://drive.google.com/file/d/1_OU1oi57bzajRWZ4JYGhTNnSCcn_oKkA/view?usp=sharing" target="_blank" class="btn" style="margin: 0; background-color: #d97706; color: white; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);">
                     <i class="fas fa-file-pdf"></i> Lihat CV
                 </a>
 
             </div>
         </div>
         
-                     <div class="hero-image reveal">
-            <!-- Pastikan nama file Pas Foto.jpeg sesuai dengan yang ada di folder -->
-            <img src="Pas Foto.jpeg" alt="Foto Algi Alghifari" style="object-position: center 20%;" onerror="this.src='https://via.placeholder.com/380x380.png?text=Foto+Kamu'">
+        <div class="hero-image reveal">
+            <img src="Pas Foto.jpeg" alt="Foto Algi Alghifari" onerror="this.src='https://via.placeholder.com/380x380.png?text=Foto+Kamu'">
         </div>
     </section>
 
@@ -663,7 +673,7 @@
                 <h4 style="color: var(--text-dark);">Politeknik Sukabumi | 2022 - 2025</h4>
                 <p style="color: var(--text-muted); margin-top: 10px;">
                     <strong>Program Studi:</strong> D3 Teknik Komputer<br>
-                    <strong>IPK:</strong> 3.52 / 4.00 (Predikat Pujian / Excellent)<br>
+                    <strong>IPK:</strong> 3.51 / 4.00 (Predikat Pujian / Excellent)<br>
                     <strong>Fokus Karir:</strong> IT Support, Network Engineering, dan Administrasi Data.
                 </p>
             </div>
