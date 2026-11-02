@@ -160,38 +160,38 @@
             margin-bottom: 40px;
             max-width: 600px;
         }
-                /* Perbaikan Foto Profil agar tidak terpotong */
+
+               /* ================= FOTO PROFIL BULAT (SETENGAH BADAN) ================= */
         .hero-image img {
-            object-position: center 15%; /* Menggeser fokus gambar ke arah atas (kepala) */
-            transform: scale(1.02); /* Sedikit zoom in agar wajah lebih menonjol */
-            transition: all 0.4s ease;
-        }
-        
-        /* Memastikan efek melayang (floating) tetap berjalan */
-        @keyframes floating {
-            0% { transform: translateY(0px) scale(1.02); }
-            50% { transform: translateY(-15px) scale(1.02); }
-            100% { transform: translateY(0px) scale(1.02); }
-        }
-        
-              .hero-image img {
-            width: 320px; /* Lebar foto */
-            height: 420px; /* Tinggi foto (memanjang ke bawah) */
-            border-radius: 20px; /* Sudut membulat, bukan lingkaran */
+            width: 380px; 
+            height: 380px; /* Kunci bentuknya jadi persegi sempurna */
+            border-radius: 50%; /* Membuatnya jadi bulat */
             object-fit: cover; 
-            object-position: top center; /* Memastikan bagian atas (kepala) masuk */
-            border: 6px solid var(--bg-white);
+            object-position: center 10%; /* TRIK UTAMA: Mengambil fokus dari 10% atas (area kepala) */
+            border: 8px solid var(--bg-white);
             box-shadow: 0 0 30px var(--glow), 0 20px 40px rgba(0,0,0,0.15);
             animation: floating 6s ease-in-out infinite;
             position: relative;
             z-index: 2;
+            transition: all 0.4s ease;
         }
 
-        /* Mengubah animasi agar tidak bentrok */
+        /* Animasi melayang */
         @keyframes floating {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
+        }
+
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            border-radius: 50%;
+            border: 2px dashed var(--accent);
+            animation: spin 20s linear infinite;
+            z-index: 1;
         }
 
         @keyframes floating {
@@ -641,7 +641,7 @@
                 </a>
                 
                 <!-- Tombol Lihat CV (Oranye Solid) -->
-                <a href="https://drive.google.com/file/d/1_OU1oi57bzajRWZ4JYGhTNnSCcn_oKkA/view?usp=sharing" target="_blank" class="btn" style="margin: 0; background-color: #d97706; color: white; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);">
+                <a href="https://drive.google.com/file/d/1BqL2unNaKWzTXNz5jpzrj0I8e-mpfhty/view?usp=drive_link" target="_blank" class="btn" style="margin: 0; background-color: #d97706; color: white; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);">
                     <i class="fas fa-file-pdf"></i> Lihat CV
                 </a>
 
