@@ -167,26 +167,24 @@
             z-index: 2;
         }
 
-        .hero-image img {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid var(--bg-white);
-            box-shadow: 0 0 30px var(--glow), 0 20px 40px rgba(0,0,0,0.1);
+              .hero-image img {
+            width: 320px; /* Lebar foto */
+            height: 420px; /* Tinggi foto (memanjang ke bawah) */
+            border-radius: 20px; /* Sudut membulat, bukan lingkaran */
+            object-fit: cover; 
+            object-position: top center; /* Memastikan bagian atas (kepala) masuk */
+            border: 6px solid var(--bg-white);
+            box-shadow: 0 0 30px var(--glow), 0 20px 40px rgba(0,0,0,0.15);
             animation: floating 6s ease-in-out infinite;
             position: relative;
             z-index: 2;
         }
 
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px; left: -20px; right: -20px; bottom: -20px;
-            border-radius: 50%;
-            border: 2px dashed var(--accent);
-            animation: spin 20s linear infinite;
-            z-index: 1;
+        /* Mengubah animasi agar tidak bentrok */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         @keyframes floating {
