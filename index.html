@@ -161,29 +161,7 @@
             max-width: 600px;
         }
 
-       
-
-        .hero-image img {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid var(--bg-white);
-            box-shadow: 0 0 30px var(--glow), 0 20px 40px rgba(0,0,0,0.1);
-            animation: floating 6s ease-in-out infinite;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px; left: -20px; right: -20px; bottom: -20px;
-            border-radius: 50%;
-            border: 2px dashed var(--accent);
-            animation: spin 20s linear infinite;
-            z-index: 1;
-        }
+    
 
         @keyframes floating {
             0% { transform: translateY(0px); }
